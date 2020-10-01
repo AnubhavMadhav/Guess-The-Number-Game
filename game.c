@@ -2,9 +2,9 @@
 #include<stdlib.h>
 #include<time.h>
 
-int main()
+void main()
 {   
-    int number, guess, nguesses=1;
+    int number, guess, nguesses=0;
     srand(time(0));
     number = rand() % 100 + 1;
     // printf("The number is %d", number);
@@ -15,11 +15,11 @@ int main()
         scanf("%d", &guess);
 
         if(guess>number){
-            printf("HINT: Guess a lower number!! \n");
+            printf("HINT: Guessed a lower number!! \n");
         }
         else if (guess<number)
         {
-            printf("HINT: Guess a higher number!! \n");
+            printf("HINT: Guessed a higher number!! \n");
         }
         else{
             printf("Correct!! You guessed it in %d attempts.\n", nguesses);
@@ -27,5 +27,5 @@ int main()
         nguesses++;
     } while(guess!=number);
     
-    return 0;
+   
 }
